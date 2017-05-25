@@ -9,6 +9,7 @@ import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 import Page6 from './views/nav3/Page6.vue'
 import echarts from './views/charts/echarts.vue'
+import success from './views/success.vue'
 
 let routes = [
     {
@@ -23,17 +24,24 @@ let routes = [
         name: '',
         hidden: true
     },
+
     //{ path: '/main', component: Main },
     {
         path: '/',
         component: Home,
-        name: '导航一',
+        name: '问题单管理',
         iconCls: 'el-icon-message',//图标样式class
         children: [
             { path: '/main', component: Main, name: '主页', hidden: true },
-            { path: '/table', component: Table, name: 'Table' },
-            { path: '/form', component: Form, name: 'Form' },
-            { path: '/user', component: user, name: '列表' },
+            { path: '/table', component: Table, name: '所有问题' },
+            { path: '/form', component: Form, name: '待我处理' },
+            { path: '/user', component: user, name: '问题报表' },
+            {
+                path: '/success',
+                component: success,
+                name: '',
+                hidden: true
+            },
         ]
     },
     {
